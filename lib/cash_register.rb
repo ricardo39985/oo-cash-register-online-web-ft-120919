@@ -6,7 +6,7 @@ attr_accessor :total, :discount, :price, :items
    @items = []
  end
  def add_item(item, price, quantity = 1)
-   @total = @total.to_f * quantity + price
+   @total = @total.to_f * quantity.to_f + price
 
  end
 end
