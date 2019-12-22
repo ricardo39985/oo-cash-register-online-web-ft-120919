@@ -10,6 +10,6 @@ attr_accessor :total, :discount, :price, :items
    @total += new_item
  end
  def apply_discount
-   @total -= (@discount.to_f/100.to_f) *@total.to_f
+   "After the discount, the total comes to $#{@total -= (@discount.to_f/100.to_f) *@total.to_f}."
  end
 end
