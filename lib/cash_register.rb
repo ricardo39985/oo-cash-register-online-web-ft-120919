@@ -10,6 +10,9 @@ attr_accessor :total, :discount, :price, :items
    @total += new_item
  end
  def apply_discount
+   if @discount > 0
    "After the discount, the total comes to $#{(@total -= (@discount.to_f/100.to_f) *@total.to_f).to_i}."
+ else
+   "There is no discount to apply."
  end
 end
