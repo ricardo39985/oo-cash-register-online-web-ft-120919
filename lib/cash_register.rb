@@ -4,9 +4,11 @@ attr_accessor :total, :discount, :price, :items
    @total = 0
    @discount = discount
    @items = []
+   @prices = []
  end
  def add_item(item, price, quantity = 1)
    quantity.times {@items << item}
+   @prices << price.to_f + quantity.to_f
    new_item = price.to_f * quantity.to_f
    @total += new_item
  end
@@ -21,6 +23,6 @@ attr_accessor :total, :discount, :price, :items
    @items
  end
  def void_last_transaction
-      @total
+      puts @prices.pop
  end
 end
